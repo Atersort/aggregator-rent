@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ListingController;
+use App\Http\Controllers\RentController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('home');
@@ -11,6 +12,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard/create', [RentController::class, 'create'])->name('create');
+
+Route::post('/dashboard/create', [RentController::class, 'create'])->name('store');
+
+Route::post('dashboard', [RentController::class, '']);
+
+Route::get('/logout', [UserController::class, 'logout']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

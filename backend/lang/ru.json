@@ -1,0 +1,12 @@
+{
+    "Email": "Почта",
+    "Name": "Имя",
+    "Password": "Пароль",
+    "Log in": "Войти",
+    "Register": "Регистрация",
+    "Forgot your password?": "Забыли пароль ?",
+    "Dashboard": "Кабинет",
+    "Logout": "Выйти",
+    "Remember me": "Запомнить меня",
+    "Already registered?": "Уже зарегистрированы?"
+}
