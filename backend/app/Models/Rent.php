@@ -15,6 +15,8 @@ class Rent extends Model
         'user_id',
     ];
 
+    protected $table = 'rent';
+
     public function photos()
     {
         return $this->hasMany(RentPhotos::class);

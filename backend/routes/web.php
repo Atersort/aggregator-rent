@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\UserController;
 
@@ -15,9 +15,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/create', [RentController::class, 'create'])->name('create');
 
-Route::post('/dashboard/create', [RentController::class, 'create'])->name('store');
-
-Route::post('dashboard', [RentController::class, '']);
+Route::post('/dashboard/store', [RentController::class, 'store'])->name('store');
 
 Route::get('/logout', [UserController::class, 'logout']);
 

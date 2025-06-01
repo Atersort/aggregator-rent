@@ -4,7 +4,8 @@
     </div>
 
     <div>
-        <form action="" method="post">
+        <form action="{{route('store')}}" method="post">
+            @csrf
             <div>
                 <label for="title">Заголовок</label>
                 <input id="title" name="title" type="text" placeholder="Введите заголовок">
