@@ -17,6 +17,7 @@ return new class extends Migration
                 $table->string('title');
                 $table->text('description');
                 $table->string('address');
+                $table->integer('price');
                 $table->unsignedInteger('rooms')->nullable();
                 $table->foreignId('user_id')->constrained();
                 $table->timestamps();

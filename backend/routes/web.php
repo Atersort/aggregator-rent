@@ -9,9 +9,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [RentController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+//Route::get('/dashboard', function () {
+//    return view('dashboard', ['all_rent' => $all_rent]);
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard/create', [RentController::class, 'create'])->name('create');
 

@@ -24,4 +24,11 @@ class RentController extends Controller
 
         return redirect('/dashboard');
     }
+
+    public function index()
+    {
+        $all_rent = Rent::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+
+        return view('dashboard', ['all_rent' => $all_rent]);
+    }
 }
