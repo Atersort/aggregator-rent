@@ -14,6 +14,7 @@ class RentController extends Controller
 
     public function store(Request $request)
     {
+        dd($request->toArray());
         Rent::create([
             'title' => $request->input('title'),
             'address' => $request->input('address'),
