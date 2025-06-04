@@ -19,10 +19,10 @@
                     <div class="flex justify-between">
                         <label for="rooms">Количество комнат</label>
                         <select id="rooms" name="rooms" class=" min-w-[200px] rounded-lg">
-                            <option name="1">1</option>
-                            <option name="2">2</option>
-                            <option name="3">3</option>
-                            <option name="0">Студия</option>
+                            <option value="1" name="1">1</option>
+                            <option value="2" name="2">2</option>
+                            <option value="3" name="3">3</option>
+                            <option value="0" name="0">Студия</option>
                         </select>
                     </div>
                     <div class="flex justify-between">
