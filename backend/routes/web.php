@@ -11,6 +11,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [RentController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/dashboard/edit/', [RentController::class, 'edit'])->name('edit');
+
 //Route::get('/dashboard', function () {
 //    return view('dashboard', ['all_rent' => $all_rent]);
 //})->middleware(['auth', 'verified'])->name('dashboard');

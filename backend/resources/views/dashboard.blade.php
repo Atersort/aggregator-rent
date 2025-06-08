@@ -24,10 +24,11 @@
                         @method('DELETE')
                         <button class="mb-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" type="submit">Удалить</button>
                     </form>
-                    <a class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" href="#">Редактировать</a>
+                    <a class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" href="{{ route('edit') }}/{{$rent['id']}}">Редактировать</a>
                 </div>
             </div>
 
         @endforeach
     </div>
+    <div class="mt-4"> {{ $all_rent->links() }}</div>
 </x-app-layout>

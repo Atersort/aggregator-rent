@@ -7,6 +7,8 @@ use App\Models\Rent;
 
 class RentController extends Controller
 {
+
+
     public function create()
     {
         return view('profile.user.create-rent');
@@ -28,7 +30,7 @@ class RentController extends Controller
 
     public function index()
     {
-        $all_rent = Rent::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        $all_rent = Rent::where('user_id', auth()->id())->orderBy('created_at', 'desc')->paginate(3);
 
         if ($all_rent->isEmpty()) {
             return view('dashboard', ['all_rent' => $all_rent, 'message' => 'No rent listings found.']);
@@ -36,5 +38,12 @@ class RentController extends Controller
 
         return view('dashboard', ['all_rent' => $all_rent]);
 //        return response()->json(['all_rent' => $all_rent]);
+    }
+
+    public function edit($id)
+    {
+        $rent = Rent::findOrFail($id);
+
+        return view('profile.user.edit-rent', ['rent' => $rent]);
     }
 }
