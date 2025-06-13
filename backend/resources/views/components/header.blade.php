@@ -1,7 +1,7 @@
 <header class="w-full mx-auto">
         <div class="bg-white my-5 px-8 flex justify-between font-mono items-center">
             <div class="flex isolate items-center">
-                <div class="text-lg text-4xl mr-4"><a href="">Арендыч</a></div>
+                <div class="text-lg text-4xl mr-4"><a href="/">Арендыч</a></div>
                 <nav class="hidden md:flex">
 
                     <ul class="hidden md:flex gap-4">

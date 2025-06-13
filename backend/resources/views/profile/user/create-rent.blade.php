@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="pt-8">
         <div class="p-4 bg-white rounded-lg shadow">
-            <h2 class="text-4xl dark:text-[#242629] font-bold">Объявление о сдаче квартиры</h2>
+            <h2 class="text-base sm:text-base md:text-lg lg:text-4xl">Объявление о сдаче квартиры</h2>
         </div>
 
         <div class="mt-4 p-4 bg-white rounded-lg shadow">

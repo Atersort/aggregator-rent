@@ -46,4 +46,25 @@ class RentController extends Controller
 
         return view('profile.user.edit-rent', ['rent' => $rent]);
     }
+
+    public function update(Request $request, $id)
+    {
+        $rent = Rent::findOrFail($id);
+
+        $rent->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'address' => $request->input('address'),
+            'price' => $request->input('price'),
+            'rooms' => $request->input('rooms'),
+        ]);
+
+        return redirect('/dashboard');
+    }
+
+    public function all_index()
+    {
+        $all_rent = Rent::orderBy('created_at', 'desc')->paginate(4);
+        return view('home', ['all_rent' => $all_rent]);
+    }
 }

@@ -23,11 +23,14 @@
     @include('components.header')
 
     <!-- Page Content -->
-    <div class="bg-gray-100">
-        <main class="max-w-[1200px] h-screen mx-auto">
+    <div class="bg-gray-100 my-4">
+        <main class="max-w-[1200px] h-auto mx-auto">
             {{ $slot }}
         </main>
     </div>
+
+    <div class="my-4">@include('components.footer')</div>
+
 </div>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>

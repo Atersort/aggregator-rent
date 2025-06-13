@@ -5,13 +5,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RentController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [RentController::class, 'all_index']);
 
 Route::get('/dashboard', [RentController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard/edit/', [RentController::class, 'edit'])->name('edit');
+Route::post('/dashboard/update/{id}', [RentController::class, 'update'])->name('update');
+Route::get('/dashboard/edit/{id}', [RentController::class, 'edit'])->name('edit');
 
 //Route::get('/dashboard', function () {
 //    return view('dashboard', ['all_rent' => $all_rent]);
