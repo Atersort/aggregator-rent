@@ -67,4 +67,11 @@ class RentController extends Controller
         $all_rent = Rent::orderBy('created_at', 'desc')->paginate(4);
         return view('home', ['all_rent' => $all_rent]);
     }
+
+    public function view($id)
+    {
+        $view = Rent::find($id);
+
+        return view('layouts.view', ['view' => $view]);
+    }
 }

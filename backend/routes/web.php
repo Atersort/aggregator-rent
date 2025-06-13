@@ -12,6 +12,8 @@ Route::get('/dashboard', [RentController::class, 'index'])->middleware(['auth', 
 Route::post('/dashboard/update/{id}', [RentController::class, 'update'])->name('update');
 Route::get('/dashboard/edit/{id}', [RentController::class, 'edit'])->name('edit');
 
+Route::get('/view/{id}', [RentController::class, 'view'])->name('view');
+
 //Route::get('/dashboard', function () {
 //    return view('dashboard', ['all_rent' => $all_rent]);
 //})->middleware(['auth', 'verified'])->name('dashboard');

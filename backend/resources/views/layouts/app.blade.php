@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="h-full" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,14 +17,14 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-<div class=" min-h-screen">
+<body class="h-full flex flex-col">
+<div class="min-h-screen">
 
     @include('components.header')
 
     <!-- Page Content -->
-    <div class="bg-gray-100 my-4">
-        <main class="max-w-[1200px] h-auto mx-auto">
+    <div class="bg-gray-100 min-h-screen">
+        <main class="max-w-[1200px] flex-1 mx-auto">
             {{ $slot }}
         </main>
     </div>
