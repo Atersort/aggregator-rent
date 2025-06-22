@@ -70,8 +70,8 @@ class RentController extends Controller
 
     public function view($id)
     {
-        $view = Rent::find($id);
+         $rent = Rent::find($id);
 
-        return view('layouts.view', ['view' => $view]);
+        return view('layouts.view', ['rent' => $rent]);
     }
 }

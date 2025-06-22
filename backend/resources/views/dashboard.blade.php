@@ -5,7 +5,8 @@
     <div class="text-base sm:text-base md:text-lg lg:text-4xl"> <h1 class="">Ваши объявления</h1> </div>
     <div class="mt-5 grid grid-cols-3 gap-4">
         @foreach ( $all_rent as $rent)
-            <div class="min-h-[300px] flex-col bg-white shadow rounded-lg">
+            <div class="flex justify-between min-h-[500px] p-2 flex-col bg-white shadow rounded-lg">
+                <img class="" src="https://dummyimage.com/350x250/cfcfcf/fff" alt="">
                 <div class="mt-6">
                     <img class="" src="" alt="">
                     <div><h2 class="text-2xl">{{ $rent['title'] }}</h2></div>
@@ -18,13 +19,15 @@
                     @endif
                     <div>{{$rent['description']}}</div>
                 </div>
-                <div class="mx-3">
+                <div class="my-3">
+
+                    <div class="my-4"><a class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" href="{{ route('view', ['id' => $rent['id']]) }}">Просмотреть</a></div>
+                    <div class="my-4"><a class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600" href="{{ route('edit', ['id' => $rent['id']]) }}">Редактировать</a></div>
                     <form action="#" method="post">
                         @csrf
                         @method('DELETE')
                         <button class="mb-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" type="submit">Удалить</button>
                     </form>
-                    <a class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" href="{{ route('edit', ['id' => $rent['id']]) }}">Редактировать</a>
                 </div>
             </div>
 
